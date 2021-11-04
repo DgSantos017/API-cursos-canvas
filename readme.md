@@ -169,7 +169,7 @@ RESPONSE STATUS -> HTTP 200
 
 ### 2.7 - Excluir curso (somente instrutor)
 
-#### POST /api/accounts/
+#### DELETE /api/courses/<int:course_id>/
 ```json
 {
     "username": "student",
@@ -193,37 +193,44 @@ RESPONSE STATUS -> HTTP 201
 
 ### 2.8 - Vincular os alunos ao curso (somente instrutor)
 
-#### POST /api/accounts/
+#### PUT /api/courses/<int:course_id>/registrations/
 ```json
 {
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
+    "user_ids": [3, 4, 5]
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
+RESPONSE STATUS -> HTTP 200
 
 ```json
 {
     "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "name": "Node",
+    "users": [
+        {
+        "id": 3,
+        "username": "student1"
+        },
+        {
+        "id": 4,
+        "username": "student2"
+        },
+        {
+        "id": 5,
+        "username": "student3"
+        }
+    ]
 }
 ```
 
 
 ### 2.9 - Criar atividade (somente instrutor ou facilitador )
 
-#### POST /api/accounts/
+#### POST /api/activities/
 ```json
 {
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
+    "title": "Kenzie Pet",
+    "points": 10
 }
     
 ```
@@ -232,70 +239,84 @@ RESPONSE STATUS -> HTTP 201
 ```json
 {
     "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "title": "Kenzie Pet",
+    "points": 10,
+    "submissions": []
 }
 ```
 
 
 ### 2.10 - Listar atividades com suas submissões (somente instrutor ou facilitador)
 
-#### POST /api/accounts/
-```json
-{
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
-}
-    
-```
-RESPONSE STATUS -> HTTP 201
+#### GET /api/activities/
+
+RESPONSE STATUS -> HTTP 200
 
 ```json
-{
-    "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
-}
+// RESPONSE STATUS -> HTTP 200
+[
+    {
+        "id": 1,
+        "title": "Kenzie Pet",
+        "points": 10,
+        "submissions": [
+            {
+                "id": 1,
+                "grade": 10,
+                "repo": "http://gitlab.com/kenzie_pet",
+                "user_id": 3,
+                "activity_id": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Kanvas",
+        "points": 10,
+        "submissions": [
+            {
+                "id": 2,
+                "grade": 8,
+                "repo": "http://gitlab.com/kanvas",
+                "user_id": 4,
+                "activity_id": 2
+            }
+        ]
+    },
+    ...
+]
 ```
 
 
 ### 2.11 - Editar atividade (somente instrutor ou facilitador)
 
-#### POST /api/accounts/
+#### PUT /api/activities/<int:activity_id>/
 ```json
 {
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
+    "title": "Kenzie DOGS",
+    "points": 30
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
+RESPONSE STATUS -> HTTP 200
 
 ```json
 {
     "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "title": "Kenzie DOGS",
+    "points": 30,
+    "submissions": []
 }
 ```
 
 
 ### 2.12 - Submeter uma atividade (somente estudante)
 
-#### POST /api/accounts/
+#### POST /api/activities/<int:activity_id>/submissions/
 ```json
 {
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
+    "grade": 10, // Esse campo é opcional
+    "repo": "http://gitlab.com/kenzie_pet"
 }
     
 ```
@@ -303,57 +324,96 @@ RESPONSE STATUS -> HTTP 201
 
 ```json
 {
-    "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "id": 7,
+    "grade": null,
+    "repo": "http://gitlab.com/kenzie_pet",
+    "user_id": 3,
+    "activity_id": 1
 }
 ```
 
 
 ### 2.13 - Editar nota da atividade (somente instrutor ou facilitador)
 
-#### POST /api/accounts/
+#### PUT /api/submissions/<int:submission_id>/
 ```json
 {
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
+    "grade": 10
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
+RESPONSE STATUS -> HTTP 200
 
 ```json
 {
-    "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "id": 3,
+    "grade": 10,
+    "repo": "http://gitlab.com/kenzie_pet",
+    "user_id": 3,
+    "activity_id": 1
 }
 ```
 
 
-### 2.14 - LIstar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas)
+### 2.14 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
 
-#### POST /api/accounts/
-```json
-{
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
-}
-    
-```
-RESPONSE STATUS -> HTTP 201
+#### GET /api/submissions/
+
+RESPONSE STATUS -> HTTP 200
+
+#### 2.14.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
 ```json
-{
-    "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
-}
+[
+    {
+        "id": 2,
+        "grade": 8,
+        "repo": "http://gitlab.com/kanvas",
+        "user_id": 4,
+        "activity_id": 2
+    },
+    {
+        "id": 5,
+        "grade": null,
+        "repo": "http://gitlab.com/kmdb2",
+        "user_id": 4,
+        "activity_id": 1
+    }
+]
 ```
+
+#### 2.14.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
+
+```json
+[
+    {
+        "id": 1,
+        "grade": 10,
+        "repo": "http://gitlab.com/kenzie_pet",
+        "user_id": 3,
+        "activity_id": 1
+    },
+    {
+        "id": 2,
+        "grade": 8,
+        "repo": "http://gitlab.com/kanvas",
+        "user_id": 4,
+        "activity_id": 2
+    },
+    {
+        "id": 3,
+        "grade": 4,
+        "repo": "http://gitlab.com/kmdb",
+        "user_id": 5,
+        "activity_id": 3
+    },
+    {
+        "id": 4,
+        "grade": null,
+        "repo": "http://gitlab.com/kmdb2",
+        "user_id": 5,
+        "activity_id": 3
+    }
+]
+```
+
