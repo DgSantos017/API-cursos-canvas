@@ -2,14 +2,14 @@
 um sistema voltado para o ensino. É possível cadastrar estudantes, facilitadores e instrutores, proporcionando aos estudantes cursos e atividades. Nesse sistema o aluno encontra aulas em formato escrito e por videos proporcionadas pelos instrutores e com auxilio dos facilitadores, atividades para praticar o que aprendeu para assimilar e é possível enviar essas atividades para a correção do time de ensino, recebendo depois todo o feedback sobre seu desempenho.
 
 
-## 1 - Como rodar o projeto ? segue o passo a passo abaixo:
+## 1 - Como rodar o projeto ? entre no terminal e siga o passo a passo abaixo:
 
-#### 1.1 - Faça o clone do repositório, digite no terminal o seguinte comando:
+#### 1.1 - Faça o clone do repositório:
 ``` git clone git@gitlab.com:diogo__.py/kanvas.git ``` <br />
 ou <br />
 ``` https://gitlab.com/diogo__.py/kanvas.git ``` 
 
-#### 1.2 - entre no diretório, digite no terminal o seguinte comando:
+#### 1.2 - entre no diretório do repositório clonado:
 ``` cd kanvas ``` 
 
 #### 1.3 - crie um ambiente virtual
