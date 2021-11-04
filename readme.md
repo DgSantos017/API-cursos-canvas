@@ -18,6 +18,19 @@ ou <br />
 #### 1.4 - ative ambiente virtual (você sempre vai trabalhar nesse ambiente):
 ``` source venv/bin/activate``` 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 #### 1.5 - uma vez dentro do ambiente virtual, instale as dependências:
 ``` pip install -r requirements.txt```
 
