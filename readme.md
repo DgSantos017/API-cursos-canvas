@@ -38,20 +38,21 @@ http://127.0.0.1:8000/
 #### POST /api/accounts/
 ```json
 {
-  "username": "student",
-  "password": "1234",
-  "is_superuser": false,
-  "is_staff": false
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
 }
+    
 ```
-Response:
+RESPONSE STATUS -> HTTP 201
 
 ```json
 {
-  "id": 1,
-  "username": "student",
-  "is_superuser": false,
-  "is_staff": false
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
 }
 ```
 
