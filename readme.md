@@ -56,16 +56,313 @@ RESPONSE STATUS -> HTTP 201
 }
 ```
 
+
 ### 2.2 - Realizar Login do usuário
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.3 - Criar curso (somente instrutor )
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.4 - Listar cursos e alunos matriculdos
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.5 - Exibir curso por ID
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.6 - Editar curso (somente instrutor)
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.7 - Excluir curso (somente instrutor)
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.8 - Vincular os alunos ao curso (somente instrutor)
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.9 - Criar atividade (somente instrutor ou facilitador )
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.10 - Listar atividades com suas submissões (somente instrutor ou facilitador)
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.11 - Editar atividade (somente instrutor ou facilitador)
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.12 - Submeter uma atividade (somente estudante)
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.13 - Editar nota da atividade (somente instrutor ou facilitador)
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
+
+
 ### 2.14 - LIstar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas)
+
+#### POST /api/accounts/
+```json
+{
+    "username": "student",
+    "password": "1234",
+    "is_superuser": false,
+    "is_staff": false
+}
+    
+```
+RESPONSE STATUS -> HTTP 201
+
+```json
+{
+    "id": 1,
+    "username": "student",
+    "is_superuser": false,
+    "is_staff": false
+}
+```
