@@ -18,24 +18,11 @@ ou <br />
 #### 1.4 - ative ambiente virtual (você sempre vai trabalhar nesse ambiente):
 ``` source venv/bin/activate``` 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### 1.5 - uma vez dentro do ambiente virtual, instale as dependências:
 ``` pip install -r requirements.txt```
 
 #### 1.6 - com os 2 próximos comandos, rode as migrations (para criar as tabelas no banco de dados interno):
-``` python manage.py makemigrations ``` <br />
+``` python manage.py makemigrations ``` <br /><br />
 ```  python manage.py migrate ```
 
 #### 1.7 - por fim, inicie o servidor para rodar o projeto:
