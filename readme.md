@@ -59,37 +59,29 @@ RESPONSE STATUS -> HTTP 201
 
 ### 2.2 - Realizar Login do usuário
 
-#### POST /api/accounts/
+#### POST /api/login/
 ```json
 {
     "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
+    "password": "1234"
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
+RESPONSE STATUS -> HTTP 200
 
 ```json
 {
-    "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "token": "dfd384673e9127213de6116ca33257ce4aa203cf"
 }
 ```
 
 
 ### 2.3 - Criar curso (somente instrutor )
 
-#### POST /api/accounts/
+#### POST /api/courses/
 ```json
 {
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
+    "name": "Node"
 }
     
 ```
@@ -98,80 +90,79 @@ RESPONSE STATUS -> HTTP 201
 ```json
 {
     "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "name": "Node",
+    "users": []
 }
 ```
 
 
 ### 2.4 - Listar cursos e alunos matriculdos
-#### POST /api/accounts/
-```json
-{
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
-}
-    
-```
-RESPONSE STATUS -> HTTP 201
+#### GET /api/courses/
+
+RESPONSE STATUS -> HTTP 200
 
 ```json
-{
-    "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
-}
+[
+    {
+        "id": 1,
+        "name": "Node",
+        "users": [
+            {
+                "id": 3,
+                "username": "student1"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Django",
+        "users": []
+    },
+    {
+        "id": 3,
+        "name": "React",
+        "users": []
+    }
+]
 ```
 
 
 ### 2.5 - Exibir curso por ID
 
-#### POST /api/accounts/
-```json
-{
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
-}
-    
-```
-RESPONSE STATUS -> HTTP 201
+#### GET /api/courses/<int:course_id>/
+
+RESPONSE STATUS -> HTTP 200
 
 ```json
 {
     "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "name": "Node",
+    "users": [
+        {
+            "id": 3,
+            "username": "student1"
+        }
+    ]
 }
 ```
 
 
 ### 2.6 - Editar curso (somente instrutor)
 
-#### POST /api/accounts/
+#### PUT /api/courses/<int:course_id>/
 ```json
 {
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
+    "name": "Python Django"
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
+RESPONSE STATUS -> HTTP 200
 
 ```json
 {
     "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
+    "name": "Python Django",
+    "users": []
 }
 ```
 
