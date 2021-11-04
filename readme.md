@@ -33,7 +33,9 @@ http://127.0.0.1:8000/
 
 ## 2 - Consumindo a API, segue abaixo todas as rotas/endpoints da aplicação
 
-### 2.1 - Cadastrar usuário
+## 2.1 - USUÁRIO
+
+### 2.1.1 - Cadatrar
 
 #### POST /api/accounts/
 ```json
@@ -57,7 +59,7 @@ RESPONSE STATUS -> HTTP 201
 ```
 
 
-### 2.2 - Realizar Login do usuário
+### 2.1.2 - Login
 
 #### POST /api/login/
 ```json
@@ -75,8 +77,9 @@ RESPONSE STATUS -> HTTP 200
 }
 ```
 
+## 2.2 - CURSO
 
-### 2.3 - Criar curso (somente instrutor )
+### 2.2.1 - Cadastrar (somente instrutor )
 
 #### POST /api/courses/
 ```json
@@ -96,7 +99,7 @@ RESPONSE STATUS -> HTTP 201
 ```
 
 
-### 2.4 - Listar cursos e alunos matriculdos
+### 2.2.2 - Listar cursos e alunos matriculdos
 #### GET /api/courses/
 
 RESPONSE STATUS -> HTTP 200
@@ -127,7 +130,7 @@ RESPONSE STATUS -> HTTP 200
 ```
 
 
-### 2.5 - Exibir curso por ID
+### 2.2.3 - Exibir curso por ID
 
 #### GET /api/courses/<int:course_id>/
 
@@ -147,7 +150,7 @@ RESPONSE STATUS -> HTTP 200
 ```
 
 
-### 2.6 - Editar curso (somente instrutor)
+### 2.2.3 - Editar (somente instrutor)
 
 #### PUT /api/courses/<int:course_id>/
 ```json
@@ -167,7 +170,7 @@ RESPONSE STATUS -> HTTP 200
 ```
 
 
-### 2.7 - Excluir curso (somente instrutor)
+### 2.2.4 - Excluir (somente instrutor)
 
 #### DELETE /api/courses/<int:course_id>/
 ```json
@@ -191,7 +194,7 @@ RESPONSE STATUS -> HTTP 201
 ```
 
 
-### 2.8 - Vincular os alunos ao curso (somente instrutor)
+### 2.2.5 - Vincular os alunos ao curso (somente instrutor)
 
 #### PUT /api/courses/<int:course_id>/registrations/
 ```json
@@ -223,8 +226,9 @@ RESPONSE STATUS -> HTTP 200
 }
 ```
 
+## 2.3 - ATIVIDADES E SUBMISSÕES
 
-### 2.9 - Criar atividade (somente instrutor ou facilitador )
+### 2.3.1 - Criar atividade (somente instrutor ou facilitador )
 
 #### POST /api/activities/
 ```json
@@ -246,7 +250,7 @@ RESPONSE STATUS -> HTTP 201
 ```
 
 
-### 2.10 - Listar atividades com suas submissões (somente instrutor ou facilitador)
+### 2.3.2 - Listar atividades com suas submissões (somente instrutor ou facilitador)
 
 #### GET /api/activities/
 
@@ -288,7 +292,7 @@ RESPONSE STATUS -> HTTP 200
 ```
 
 
-### 2.11 - Editar atividade (somente instrutor ou facilitador)
+### 2.3.3 - Editar atividade (somente instrutor ou facilitador)
 
 #### PUT /api/activities/<int:activity_id>/
 ```json
@@ -310,7 +314,7 @@ RESPONSE STATUS -> HTTP 200
 ```
 
 
-### 2.12 - Submeter uma atividade (somente estudante)
+### 2.3.4 - Submeter (somente estudante)
 
 #### POST /api/activities/<int:activity_id>/submissions/
 ```json
@@ -333,7 +337,7 @@ RESPONSE STATUS -> HTTP 201
 ```
 
 
-### 2.13 - Editar nota da atividade (somente instrutor ou facilitador)
+### 2.3.5 - Editar nota da atividade (somente instrutor ou facilitador)
 
 #### PUT /api/submissions/<int:submission_id>/
 ```json
@@ -355,13 +359,13 @@ RESPONSE STATUS -> HTTP 200
 ```
 
 
-### 2.14 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
+### 2.3.6 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
 
 #### GET /api/submissions/
 
 RESPONSE STATUS -> HTTP 200
 
-#### 2.14.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
+#### 2.3.6.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
 ```json
 [
@@ -382,7 +386,7 @@ RESPONSE STATUS -> HTTP 200
 ]
 ```
 
-#### 2.14.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
+#### 2.3.6.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
 ```json
 [
