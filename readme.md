@@ -12,20 +12,20 @@ ou <br />
 #### 1.2 - entre no diretório do repositório clonado:
 ``` cd kanvas ``` 
 
-#### 1.3 - crie um ambiente virtual
+#### 1.3 - crie um ambiente virtual:
 ``` python -m venv venv``` 
 
-#### 1.4 - ative ambiente virtual (você sempre vai trabalhar nesse ambiente)
+#### 1.4 - ative ambiente virtual (você sempre vai trabalhar nesse ambiente):
 ``` source venv/bin/activate``` 
 
-#### 1.5 - uma vez dentro do ambiente virtual, instale as dependências
+#### 1.5 - uma vez dentro do ambiente virtual, instale as dependências:
 ``` pip install -r requirements.txt```
 
-#### 1.6 - com os 2 próximos comandos, rode as migrations (para criar as tabelas no banco de dados interno)
+#### 1.6 - com os 2 próximos comandos, rode as migrations (para criar as tabelas no banco de dados interno):
 ``` python manage.py makemigrations ``` <br />
 ```  python manage.py migrate ```
 
-#### 1.7 - por fim, inicie o servidor para rodar o projeto
+#### 1.7 - por fim, inicie o servidor para rodar o projeto:
 ``` python manage.py runserver ```
 ##### 1.7.1 - se todos os passos foram bem executados, seu projeto vai rodar localmente no seguinte endereço:
 http://127.0.0.1:8000/
