@@ -1,7 +1,7 @@
 # KANVAS
 
 ## 1 - O que é ?
-### 1.1 - um sistema voltado para o ensino. É possível cadastrar estudantes, facilitadores e instrutores(todos com permissões de operação diferenciada de acordo com o tipo do usuário), proporcionar aos estudantes cursos e atividades. Nesse sistema o aluno encontra aulas em formato escrito e por videos proporcionadas pelos instrutores e com auxilio dos facilitadores, atividades para praticar o que aprendeu para assimilar e é possível enviar essas atividades para a correção do time de ensino, recebendo depois todo o feedback sobre seu desempenho.
+1.1 - um sistema voltado para o ensino. É possível cadastrar estudantes, facilitadores e instrutores(todos com permissões de operação diferenciada de acordo com o tipo do usuário), proporcionar aos estudantes cursos e atividades. Nesse sistema o aluno encontra aulas em formato escrito e por videos proporcionadas pelos instrutores e com auxilio dos facilitadores, atividades para praticar o que aprendeu para assimilar e é possível enviar essas atividades para a correção do time de ensino, recebendo depois todo o feedback sobre seu desempenho.
 
 
 ## 2 - Como rodar o projeto ? segue o passo a passo abaixo:
