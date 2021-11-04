@@ -33,17 +33,38 @@ http://127.0.0.1:8000/
 
 ## 2 - Consumindo a API, segue abaixo todas as rotas/endpoints da aplicação
 
-#### 2.1 - Cadastrar usuário
-#### 2.2 - Realizar Login do usuário
-#### 2.3 - Criar curso (somente instrutor )
-#### 2.4 - Listar cursos e alunos matriculdos
-#### 2.5 - Exibir curso por ID
-#### 2.6 - Editar curso (somente instrutor)
-#### 2.7 - Excluir curso (somente instrutor)
-#### 2.8 - Vincular os alunos ao curso (somente instrutor)
-#### 2.9 - Criar atividade (somente instrutor ou facilitador )
-#### 2.10 - Listar atividades com suas submissões (somente instrutor ou facilitador)
-#### 2.11 - Editar atividade (somente instrutor ou facilitador)
-#### 2.12 - Submeter uma atividade (somente estudante)
-#### 2.13 - Editar nota da atividade (somente instrutor ou facilitador)
-#### 2.14 - LIstar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas)
+### 2.1 - Cadastrar usuário
+
+#### POST /api/accounts/
+```json
+{
+  "username": "student",
+  "password": "1234",
+  "is_superuser": false,
+  "is_staff": false
+}
+```
+Response:
+
+```json
+{
+  "id": 1,
+  "username": "student",
+  "is_superuser": false,
+  "is_staff": false
+}
+```
+
+### 2.2 - Realizar Login do usuário
+### 2.3 - Criar curso (somente instrutor )
+### 2.4 - Listar cursos e alunos matriculdos
+### 2.5 - Exibir curso por ID
+### 2.6 - Editar curso (somente instrutor)
+### 2.7 - Excluir curso (somente instrutor)
+### 2.8 - Vincular os alunos ao curso (somente instrutor)
+### 2.9 - Criar atividade (somente instrutor ou facilitador )
+### 2.10 - Listar atividades com suas submissões (somente instrutor ou facilitador)
+### 2.11 - Editar atividade (somente instrutor ou facilitador)
+### 2.12 - Submeter uma atividade (somente estudante)
+### 2.13 - Editar nota da atividade (somente instrutor ou facilitador)
+### 2.14 - LIstar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas)
