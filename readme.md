@@ -66,7 +66,6 @@ http://127.0.0.1:8000/
 }
 ```
 
-
 ### 2.1.2 - Login
 
 #### POST /api/login/
@@ -84,6 +83,7 @@ http://127.0.0.1:8000/
     "token": "dfd384673e9127213de6116ca33257ce4aa203cf"
 }
 ```
+
 ## 2.1.2.1 - Excesssões ao realizar o login
 
 ### 2.1.2.1.1  - Realizar login em uma conta ainda não criada
@@ -222,7 +222,13 @@ http://127.0.0.1:8000/
 }
     
 ```
-
+## 2.2.6 - Excessões de exbir, editar e exclir curso por ID inexistente
+```json
+// RESPONSE STATUS -> HTTP 404 Not Found
+{
+   "error": "course does not exist"
+}
+```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -235,7 +241,7 @@ http://127.0.0.1:8000/
 ```
 
 
-### 2.2.6 - Vincular os alunos ao curso (somente instrutor)
+### 2.2.7 - Vincular os alunos ao curso (somente instrutor)
 
 #### PUT /api/courses/<int:course_id>/registrations/
 ```json
@@ -268,9 +274,9 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.2.6.1 - Excesssões em vincular os alunos ao curso
+## 2.2.7.1 - Excesssões em vincular os alunos ao curso
 
-### 2.2.6.1.1 - Caso não seja informado uma lista de estudantes
+### 2.2.7.1.1 - Caso não seja informado uma lista de estudantes
 ```json
 // RESPONSE STATUS -> HTTP 400 - Bad request
 {
@@ -278,19 +284,11 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.2.6.1.2 - Somente estudantes podem ser matriculados, caso contrário:
+### 2.2.7.1.2 - Somente estudantes podem ser matriculados, caso contrário:
 ```json
 // RESPONSE STATUS -> HTTP 400 - Bad request
 {
    "error": "Only students can be enrolled in the course"
-}
-```
-
-## 2.2.7 - Excessões de exbir, editar e exclir curso por ID inexistente
-```json
-// RESPONSE STATUS -> HTTP 404 Not Found
-{
-   "error": "course does not exist"
 }
 ```
 
@@ -449,8 +447,6 @@ http://127.0.0.1:8000/
 ### 2.3.6 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
 
 #### GET /api/submissions/
-
-
 
 #### 2.3.6.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
