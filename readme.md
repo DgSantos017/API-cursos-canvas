@@ -57,6 +57,15 @@ http://127.0.0.1:8000/
     "is_staff": false
 }
 ```
+## 2.1.1.1 - Excessões ao cadatrar usuário
+
+### 2.1.1.1.1 - Cadastrar usuário que já existe.
+```json
+// RESPONSE STATUS -> HTTP 409 - Conflict
+{
+    "error": "user already exists"
+}
+```
 
 
 ### 2.1.2 - Login
@@ -74,6 +83,30 @@ http://127.0.0.1:8000/
 // RESPONSE STATUS -> HTTP 200
 {
     "token": "dfd384673e9127213de6116ca33257ce4aa203cf"
+}
+```
+## 2.1.2.1 - Excesssões ao realizar o login
+
+### 2.1.2.1.1  - Realizar login em uma conta ainda não criada
+```json
+// RESPONSE STATUS -> HTTP 401 - Unauthorized
+{
+    "error": "Incorrect login or password"
+}
+```
+
+### 2.1.2.1.2  - Token inválido
+```json
+// RESPONSE STATUS -> HTTP 401
+{
+    "error": "Invalid token"
+}
+```
+### 2.1.2.1.3  - Token válido, porém não atende os requisitos mínimo de permissão
+```json
+// RESPONSE STATUS -> HTTP 403
+{
+    "error": "You do not have permission to perform this action."
 }
 ```
 
@@ -291,8 +324,7 @@ http://127.0.0.1:8000/
                 "activity_id": 2
             }
         ]
-    },
-    ...
+    }
 ]
 ```
 
