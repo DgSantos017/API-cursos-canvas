@@ -57,9 +57,8 @@ http://127.0.0.1:8000/
     "is_staff": false
 }
 ```
-## 2.1.1.1 - Excessões ao cadatrar usuário
+### 2.1.1.1 - Excessão ao cadatrar usuário que já existe
 
-### 2.1.1.1.1 - Cadastrar usuário que já existe.
 ```json
 // RESPONSE STATUS -> HTTP 409 - Conflict
 {
@@ -130,9 +129,8 @@ http://127.0.0.1:8000/
     "users": []
 }
 ```
-## 2.2.1.1 - Excesssões ao cadastrar um curso
 
-### 2.2.1.1.1  - Cadastrar um curso já existente
+## 2.2.1.1 - Excesssão ao cadastrar um curso que já existe
 ```json
 // RESPONSE STATUS -> HTTP 400 BAD REQUEST
 {
@@ -192,7 +190,6 @@ http://127.0.0.1:8000/
 }
 ```
 
-
 ### 2.2.4 - Editar (somente instrutor)
 
 #### PUT /api/courses/<int:course_id>/
@@ -212,7 +209,6 @@ http://127.0.0.1:8000/
     "users": []
 }
 ```
-
 
 ### 2.2.5 - Excluir (somente instrutor)
 
@@ -272,6 +268,32 @@ http://127.0.0.1:8000/
 }
 ```
 
+## 2.2.6.1 - Excesssões em vincular os alunos ao curso
+
+### 2.2.6.1.1 - Caso não seja informado uma lista de estudantes
+```json
+// RESPONSE STATUS -> HTTP 400 - Bad request
+{
+   "error": "you need to enter a list of students"
+}
+```
+
+### 2.2.6.1.2 - Somente estudantes podem ser matriculados, caso contrário:
+```json
+// RESPONSE STATUS -> HTTP 400 - Bad request
+{
+   "error": "Only students can be enrolled in the course"
+}
+```
+
+## 2.2.7 - Excessões de exbir, editar e exclir curso por ID inexistente
+```json
+// RESPONSE STATUS -> HTTP 404 Not Found
+{
+   "error": "course does not exist"
+}
+```
+
 ## 2.3 - ATIVIDADES E SUBMISSÕES
 
 ### 2.3.1 - Criar atividade (somente instrutor ou facilitador )
@@ -293,6 +315,15 @@ http://127.0.0.1:8000/
     "title": "Kenzie Pet",
     "points": 10,
     "submissions": []
+}
+```
+
+### 2.3.1.1 - Excessão de criar atividade com o mesmo titulo
+
+```json
+// RESPONSE STATUS -> HTTP 400 BAD REQUEST
+{
+    "error": "Activity with this name already exists"}
 }
 ```
 
@@ -349,7 +380,6 @@ http://127.0.0.1:8000/
     
 ```
 
-
 ```json
 // RESPONSE STATUS -> HTTP 200
 {
@@ -357,6 +387,14 @@ http://127.0.0.1:8000/
     "title": "Kenzie DOGS",
     "points": 30,
     "submissions": []
+}
+```
+
+## 2.3.3.1 - Excessão onde a atividade que algum aluno tenha feito uma submissão não pode sofrer alteração no nome ou na pontuação
+```json
+// RESPONSE STATUS -> HTTP 400 Bad Request
+{
+   "error": "You can not change an Activity with submissions"
 }
 ```
 
