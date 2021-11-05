@@ -130,6 +130,15 @@ http://127.0.0.1:8000/
     "users": []
 }
 ```
+## 2.2.1.1 - Excesssões ao cadastrar um curso
+
+### 2.2.1.1.1  - Cadastrar um curso já existente
+```json
+// RESPONSE STATUS -> HTTP 400 BAD REQUEST
+{
+    "error": "Course with this name already exists"
+}
+```
 
 
 ### 2.2.2 - Listar cursos e alunos matriculdos
