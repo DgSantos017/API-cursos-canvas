@@ -47,9 +47,9 @@ http://127.0.0.1:8000/
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
 
 ```json
+// RESPONSE STATUS -> HTTP 201
 {
     "id": 1,
     "username": "student",
@@ -69,9 +69,9 @@ RESPONSE STATUS -> HTTP 201
 }
     
 ```
-RESPONSE STATUS -> HTTP 200
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 {
     "token": "dfd384673e9127213de6116ca33257ce4aa203cf"
 }
@@ -88,9 +88,9 @@ RESPONSE STATUS -> HTTP 200
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
 
 ```json
+// RESPONSE STATUS -> HTTP 201
 {
     "id": 1,
     "name": "Node",
@@ -102,9 +102,9 @@ RESPONSE STATUS -> HTTP 201
 ### 2.2.2 - Listar cursos e alunos matriculdos
 #### GET /api/courses/
 
-RESPONSE STATUS -> HTTP 200
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 [
     {
         "id": 1,
@@ -134,9 +134,10 @@ RESPONSE STATUS -> HTTP 200
 
 #### GET /api/courses/<int:course_id>/
 
-RESPONSE STATUS -> HTTP 200
+
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 {
     "id": 1,
     "name": "Node",
@@ -150,7 +151,7 @@ RESPONSE STATUS -> HTTP 200
 ```
 
 
-### 2.2.3 - Editar (somente instrutor)
+### 2.2.4 - Editar (somente instrutor)
 
 #### PUT /api/courses/<int:course_id>/
 ```json
@@ -159,9 +160,10 @@ RESPONSE STATUS -> HTTP 200
 }
     
 ```
-RESPONSE STATUS -> HTTP 200
+
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 {
     "id": 1,
     "name": "Python Django",
@@ -170,7 +172,7 @@ RESPONSE STATUS -> HTTP 200
 ```
 
 
-### 2.2.4 - Excluir (somente instrutor)
+### 2.2.5 - Excluir (somente instrutor)
 
 #### DELETE /api/courses/<int:course_id>/
 ```json
@@ -182,9 +184,10 @@ RESPONSE STATUS -> HTTP 200
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
+
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 {
     "id": 1,
     "username": "student",
@@ -194,7 +197,7 @@ RESPONSE STATUS -> HTTP 201
 ```
 
 
-### 2.2.5 - Vincular os alunos ao curso (somente instrutor)
+### 2.2.6 - Vincular os alunos ao curso (somente instrutor)
 
 #### PUT /api/courses/<int:course_id>/registrations/
 ```json
@@ -203,9 +206,10 @@ RESPONSE STATUS -> HTTP 201
 }
     
 ```
-RESPONSE STATUS -> HTTP 200
+
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 {
     "id": 1,
     "name": "Node",
@@ -238,9 +242,10 @@ RESPONSE STATUS -> HTTP 200
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
+
 
 ```json
+// RESPONSE STATUS -> HTTP 201
 {
     "id": 1,
     "title": "Kenzie Pet",
@@ -254,7 +259,7 @@ RESPONSE STATUS -> HTTP 201
 
 #### GET /api/activities/
 
-RESPONSE STATUS -> HTTP 200
+
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -302,9 +307,10 @@ RESPONSE STATUS -> HTTP 200
 }
     
 ```
-RESPONSE STATUS -> HTTP 200
+
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 {
     "id": 1,
     "title": "Kenzie DOGS",
@@ -324,9 +330,10 @@ RESPONSE STATUS -> HTTP 200
 }
     
 ```
-RESPONSE STATUS -> HTTP 201
+
 
 ```json
+// RESPONSE STATUS -> HTTP 201
 {
     "id": 7,
     "grade": null,
@@ -346,9 +353,10 @@ RESPONSE STATUS -> HTTP 201
 }
     
 ```
-RESPONSE STATUS -> HTTP 200
+
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 {
     "id": 3,
     "grade": 10,
@@ -363,11 +371,12 @@ RESPONSE STATUS -> HTTP 200
 
 #### GET /api/submissions/
 
-RESPONSE STATUS -> HTTP 200
+
 
 #### 2.3.6.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 [
     {
         "id": 2,
@@ -389,6 +398,7 @@ RESPONSE STATUS -> HTTP 200
 #### 2.3.6.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
 ```json
+// RESPONSE STATUS -> HTTP 200
 [
     {
         "id": 1,
