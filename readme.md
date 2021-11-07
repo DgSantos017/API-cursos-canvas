@@ -41,9 +41,10 @@ http://127.0.0.1:8000/
 
 ### 2.1.1 - Cadatrar
 
-#### POST /api/accounts/
+### POST - ```http://127.0.0.1:8000/api/accounts/```
 ```json
 {
+    // BODY REQUEST
     "username": "student",
     "password": "1234",
     "is_superuser": false,
@@ -72,8 +73,9 @@ http://127.0.0.1:8000/
 
 ### 2.1.2 - Login
 
-#### POST /api/login/
+### POST - ```http://127.0.0.1:8000/api/login/```
 ```json
+// BODY REQUEST
 {
     "username": "student",
     "password": "1234"
@@ -117,8 +119,9 @@ http://127.0.0.1:8000/
 
 ### 2.2.1 - Cadastrar (somente instrutor )
 
-#### POST /api/courses/
+### POST - ```http://127.0.0.1:8000/api/courses/```
 ```json
+// BODY REQUEST
 {
     "name": "Node"
 }
@@ -144,8 +147,7 @@ http://127.0.0.1:8000/
 
 
 ### 2.2.2 - Listar cursos e alunos matriculdos
-#### GET /api/courses/
-
+### GET - ```http://127.0.0.1:8000/api/courses/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -176,9 +178,7 @@ http://127.0.0.1:8000/
 
 ### 2.2.3 - Exibir curso por ID
 
-#### GET /api/courses/<int:course_id>/
-
-
+### GET - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -196,14 +196,14 @@ http://127.0.0.1:8000/
 
 ### 2.2.4 - Editar (somente instrutor)
 
-#### PUT /api/courses/<int:course_id>/
+### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 ```json
+// BODY REQUEST
 {
     "name": "Python Django"
 }
     
 ```
-
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -216,7 +216,7 @@ http://127.0.0.1:8000/
 
 ### 2.2.5 - Excluir (somente instrutor)
 
-#### DELETE /api/courses/<int:course_id>/
+### DELETE - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 ```json
  // RESPONSE STATUS -> HTTP 204 NO CONTENT
 ```
@@ -229,21 +229,11 @@ http://127.0.0.1:8000/
 }
 ```
 
-```json
-// RESPONSE STATUS -> HTTP 200
-{
-    "id": 1,
-    "username": "student",
-    "is_superuser": false,
-    "is_staff": false
-}
-```
-
-
 ### 2.2.7 - Vincular os alunos ao curso (somente instrutor)
 
-#### PUT /api/courses/<int:course_id>/registrations/
+### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/registrations/```
 ```json
+// BODY REQUEST
 {
     "user_ids": [3, 4, 5]
 }
@@ -295,8 +285,9 @@ http://127.0.0.1:8000/
 
 ### 2.3.1 - Criar atividade (somente instrutor ou facilitador )
 
-#### POST /api/activities/
+### POST - ```http://127.0.0.1:8000/api/activities/```
 ```json
+// BODY REQUEST
 {
     "title": "Kenzie Pet",
     "points": 10
@@ -327,9 +318,7 @@ http://127.0.0.1:8000/
 
 ### 2.3.2 - Listar atividades com suas submissões (somente instrutor ou facilitador)
 
-#### GET /api/activities/
-
-
+### GET - ```http://127.0.0.1:8000/api/activities/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -368,8 +357,9 @@ http://127.0.0.1:8000/
 
 ### 2.3.3 - Editar atividade (somente instrutor ou facilitador)
 
-#### PUT /api/activities/<int:activity_id>/
+### PUT - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/```
 ```json
+// BODY REQUEST
 {
     "title": "Kenzie DOGS",
     "points": 30
@@ -398,15 +388,15 @@ http://127.0.0.1:8000/
 
 ### 2.3.4 - Submeter (somente estudante)
 
-#### POST /api/activities/<int:activity_id>/submissions/
+### POST - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/submissions/```
 ```json
+// BODY REQUEST
 {
     "grade": 10, // Esse campo é opcional
     "repo": "http://gitlab.com/kenzie_pet"
 }
     
 ```
-
 
 ```json
 // RESPONSE STATUS -> HTTP 201
@@ -422,8 +412,9 @@ http://127.0.0.1:8000/
 
 ### 2.3.5 - Editar nota da atividade (somente instrutor ou facilitador)
 
-#### PUT /api/submissions/<int:submission_id>/
+### PUT - ```http://127.0.0.1:8000/api/submissions/<int:submission_id>/```
 ```json
+// BODY REQUEST
 {
     "grade": 10
 }
@@ -445,7 +436,7 @@ http://127.0.0.1:8000/
 
 ### 2.3.6 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
 
-#### GET /api/submissions/
+### GET - ```http://127.0.0.1:8000/api/submissions/```
 
 #### 2.3.6.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
@@ -471,6 +462,7 @@ http://127.0.0.1:8000/
 
 #### 2.3.6.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
+### GET - ```http://127.0.0.1:8000/api/submissions/```
 ```json
 // RESPONSE STATUS -> HTTP 200
 [
