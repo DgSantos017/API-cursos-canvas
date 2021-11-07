@@ -462,7 +462,7 @@ http://127.0.0.1:8000/
 
 #### 2.3.6.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
-### GET - <p>```http://127.0.0.1:8000/api/submissions/```</p>
+### GET - <p color="#ccc">```http://127.0.0.1:8000/api/submissions/```</p>
 ```json/
 // RESPONSE STATUS -> HTTP 200
 [
