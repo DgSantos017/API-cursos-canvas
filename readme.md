@@ -218,14 +218,9 @@ http://127.0.0.1:8000/
 
 #### DELETE /api/courses/<int:course_id>/
 ```json
-{
-    "username": "student",
-    "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
-}
-    
+ // RESPONSE STATUS -> HTTP 204 NO CONTENT
 ```
+
 ## 2.2.6 - Excessões de exbir, editar e exclir curso por ID inexistente
 ```json
 // RESPONSE STATUS -> HTTP 404 Not Found
