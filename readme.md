@@ -91,7 +91,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.1.2.1 - Excesssões ao realizar o login
+## 2.1.2.1 - Excesssões ao realizar login e de operações não autorizadas de acordo com o nível de usúario.
 
 ### 2.1.2.1.1  - Realizar login em uma conta ainda não criada
 ```json
@@ -279,6 +279,14 @@ http://127.0.0.1:8000/
 // RESPONSE STATUS -> HTTP 400 - Bad request
 {
    "error": "Only students can be enrolled in the course"
+}
+```
+
+### 2.2.7.1.3 - Caso seja informado na lista um ID de usário inválido:
+```json
+// RESPONSE STATUS -> HTTP 404 - Not Found
+{
+    "errors": "invalid user_id list"
 }
 ```
 
