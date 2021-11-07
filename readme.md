@@ -41,7 +41,7 @@ http://127.0.0.1:8000/
 
 ### 2.1.1 - Cadatrar
 
-### POST - ```http://127.0.0.1:8000/api/accounts/```
+#### POST - ```http://127.0.0.1:8000/api/accounts/```
 ```json
 {
     // BODY REQUEST
@@ -73,7 +73,7 @@ http://127.0.0.1:8000/
 
 ### 2.1.2 - Login
 
-### POST - ```http://127.0.0.1:8000/api/login/```
+#### POST - ```http://127.0.0.1:8000/api/login/```
 ```json
 // BODY REQUEST
 {
@@ -119,7 +119,7 @@ http://127.0.0.1:8000/
 
 ### 2.2.1 - Cadastrar (somente instrutor )
 
-### POST - ```http://127.0.0.1:8000/api/courses/```
+#### POST - ```http://127.0.0.1:8000/api/courses/```
 ```json
 // BODY REQUEST
 {
@@ -147,7 +147,7 @@ http://127.0.0.1:8000/
 
 
 ### 2.2.2 - Listar cursos e alunos matriculdos
-### GET - ```http://127.0.0.1:8000/api/courses/```
+#### GET - ```http://127.0.0.1:8000/api/courses/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -178,7 +178,7 @@ http://127.0.0.1:8000/
 
 ### 2.2.3 - Exibir curso por ID
 
-### GET - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
+#### GET - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -196,7 +196,7 @@ http://127.0.0.1:8000/
 
 ### 2.2.4 - Editar (somente instrutor)
 
-### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
+#### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 ```json
 // BODY REQUEST
 {
@@ -216,7 +216,7 @@ http://127.0.0.1:8000/
 
 ### 2.2.5 - Excluir (somente instrutor)
 
-### DELETE - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
+#### DELETE - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 ```json
  // RESPONSE STATUS -> HTTP 204 NO CONTENT
 ```
@@ -231,7 +231,7 @@ http://127.0.0.1:8000/
 
 ### 2.2.7 - Vincular os alunos ao curso (somente instrutor)
 
-### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/registrations/```
+#### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/registrations/```
 ```json
 // BODY REQUEST
 {
@@ -285,7 +285,7 @@ http://127.0.0.1:8000/
 
 ### 2.3.1 - Criar atividade (somente instrutor ou facilitador )
 
-### POST - ```http://127.0.0.1:8000/api/activities/```
+#### POST - ```http://127.0.0.1:8000/api/activities/```
 ```json
 // BODY REQUEST
 {
@@ -318,7 +318,7 @@ http://127.0.0.1:8000/
 
 ### 2.3.2 - Listar atividades com suas submissões (somente instrutor ou facilitador)
 
-### GET - ```http://127.0.0.1:8000/api/activities/```
+#### GET - ```http://127.0.0.1:8000/api/activities/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -357,7 +357,7 @@ http://127.0.0.1:8000/
 
 ### 2.3.3 - Editar atividade (somente instrutor ou facilitador)
 
-### PUT - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/```
+#### PUT - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/```
 ```json
 // BODY REQUEST
 {
@@ -388,7 +388,7 @@ http://127.0.0.1:8000/
 
 ### 2.3.4 - Submeter (somente estudante)
 
-### POST - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/submissions/```
+#### POST - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/submissions/```
 ```json
 // BODY REQUEST
 {
@@ -412,7 +412,7 @@ http://127.0.0.1:8000/
 
 ### 2.3.5 - Editar nota da atividade (somente instrutor ou facilitador)
 
-### PUT - ```http://127.0.0.1:8000/api/submissions/<int:submission_id>/```
+#### PUT - ```http://127.0.0.1:8000/api/submissions/<int:submission_id>/```
 ```json
 // BODY REQUEST
 {
@@ -436,7 +436,7 @@ http://127.0.0.1:8000/
 
 ### 2.3.6 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
 
-### GET - ```http://127.0.0.1:8000/api/submissions/```
+#### GET - ```http://127.0.0.1:8000/api/submissions/```
 
 #### 2.3.6.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
@@ -462,8 +462,8 @@ http://127.0.0.1:8000/
 
 #### 2.3.6.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
-### GET - <p color="#ccc">```http://127.0.0.1:8000/api/submissions/```</p>
-```json/
+#### GET - ```http://127.0.0.1:8000/api/submissions/```
+```json
 // RESPONSE STATUS -> HTTP 200
 [
     {
