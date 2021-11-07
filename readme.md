@@ -43,8 +43,9 @@ http://127.0.0.1:8000/
 
 #### POST - ```http://127.0.0.1:8000/api/accounts/```
 ```json
+// BODY REQUEST
 {
-    // BODY REQUEST
+    
     "username": "student",
     "password": "1234",
     "is_superuser": false,
