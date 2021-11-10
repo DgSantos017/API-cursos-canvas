@@ -1,18 +1,16 @@
 from rest_framework.permissions import BasePermission
 
+class Facilitator(BasePermission):
+    def has_permission(self, request, view):
+        if request.method == 'GET':
+            return True
+        return request.user.is_staff
+
 
 class Instructor(BasePermission):
-    def permission(self, request, view):
-        return request.user.is_superuser and request.user.is_staff
-
-
-class Facilitator(BasePermission):
-    def permission(self, request, view):
-        return request.user.is_staff and not request.user.is_superuser
-
-
-class Student(BasePermission):
-    def permission(self, request, view):
-        if request.user != 'AnonymousUser' and not request.user.is_superuser and not request.user.is_staff:
+    def has_permission(self, request, view):     
+        if request.method == 'GET':
             return True
+        return request.user.is_superuser
+
 

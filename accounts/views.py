@@ -1,39 +1,47 @@
 from accounts.serializers import UserSerializer
+from django.db.utils import IntegrityError
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
+
+from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework import status
-from django.contrib.auth import authenticate
-from .models import User
-
-import django
-
-
-class Register(APIView):
-    def post(self, request):
-        try:
-            data_user = request.data
-            user: User = User.objects.create_user(**data_user)
-            serializer = UserSerializer(user)
-
-            return Response(serializer.data, status=201)
-
-        except django.db.utils.IntegrityError:
-            return Response({"error": "user already exists"}, status=409)
-
 
 
 class Login(APIView):
     def post(self, request):
+        try:
+            username = request.data['username']
+            password = request.data['password']
 
-        username = request.data['username']
-        password = request.data['password']
+            user = authenticate(username=username, password=password)
 
-        user = authenticate(username=username, password=password)
-
-        if not user:
+            if user != None:
+                token = Token.objects.get_or_create(user=user)[0]
+                return Response({'token': token.key})
+            
             return Response({"error": "Incorrect login or password"}, status=401)
+        except KeyError as e:
+            return Response({"error": f"{str(e)} is missing"})
 
-        token = Token.objects.get_or_create(user=user)[0]
 
-        return Response({"token": token.key}, status=200)
+class Register(APIView):
+    def post(self, request):
+        try:       
+            username = request.data['username']
+            password = request.data['password']
+            is_staff = request.data['is_staff']
+            is_superuser = request.data['is_superuser']
+
+            user = User.objects.create_user(username=username, password=password, is_staff=is_staff, is_superuser=is_superuser)
+            serializer = UserSerializer(user)
+            user_serializer = {
+                **serializer.data,
+                'is_staff': user.is_staff,
+                'is_superuser': user.is_superuser
+            }
+
+            return Response(user_serializer, status=201)
+        except IntegrityError:
+            return Response({"error": "user already exists"}, status=409)
