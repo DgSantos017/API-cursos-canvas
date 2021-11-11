@@ -24,7 +24,7 @@ class RegistrationCourse(APIView):
             for id in user_ids:
                 user = User.objects.get(id=id)
                 if user.is_staff or user.is_superuser:
-                    return Response({"error": "you need to enter a list of students"}, status=400)
+                    return Response({"error": "Only students can be enrolled in the course"}, status=400)
                 course.users.add(user)
             
             course.save()
@@ -38,10 +38,7 @@ class RegistrationCourse(APIView):
         except User.DoesNotExist:
             return Response({"error": "invalid user_id list"}, status=404)
 
-        except TypeError:
-            return Response({"error": "Only students can be enrolled in the course"}, status=400)
-
-
+       
 class Courses(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [Instructor]

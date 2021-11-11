@@ -301,15 +301,7 @@ http://127.0.0.1:8000/
 
 ## 2.2.7.1 - Excesssões em vincular os alunos ao curso
 
-### 2.2.7.1.1 - Caso não seja informado uma lista de estudantes
-```json
-// RESPONSE STATUS -> HTTP 400 - Bad request
-{
-   "error": "you need to enter a list of students"
-}
-```
-
-### 2.2.7.1.2 - Somente estudantes podem ser matriculados, caso contrário:
+### 2.2.7.1.1 - Somente estudantes podem ser matriculados, caso contrário:
 ```json
 // RESPONSE STATUS -> HTTP 400 - Bad request
 {
@@ -317,7 +309,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.2.7.1.3 - Caso seja informado na lista um ID de usário inválido:
+### 2.2.7.1.2 - Caso seja informado na lista um ID de usário inválido:
 ```json
 // RESPONSE STATUS -> HTTP 404 - Not Found
 {
