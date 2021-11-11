@@ -49,7 +49,7 @@ http://127.0.0.1:8000/
     "username": "Diogo",
     "password": "1234",
     "is_superuser": false, // altere para true se quiser cadastrar um instrutor
-    "is_staff": false // altere para true e permaneça como false o campo acima se quiser cadastrar um facilitador.
+    "is_staff": false // altere para true e deixe false o campo acima se quiser cadastrar um facilitador
 }
     
 ```
