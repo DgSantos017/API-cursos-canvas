@@ -131,16 +131,16 @@ http://127.0.0.1:8000/
 
 ### 2.1.2.1.2  - Token inválido
 ```json
-// RESPONSE STATUS -> HTTP 401
+// RESPONSE STATUS -> HTTP 401 - Unauthorized
 {
-    "error": "Invalid token"
+    "detail": "Invalid token."
 }
 ```
 ### 2.1.2.1.3  - Token válido, porém não atende os requisitos mínimo de permissão
 ```json
 // RESPONSE STATUS -> HTTP 403
 {
-    "error": "You do not have permission to perform this action."
+    "detail": "You do not have permission to perform this action."
 }
 ```
 ### 2.1.3 - Excessão que um campo está faltando

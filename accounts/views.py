@@ -47,7 +47,7 @@ class Login(APIView):
                 token = Token.objects.get_or_create(user=user)[0]
                 return Response({'token': token.key})
             
-            return Response({"error": "Incorrect login or password"}, status=400)
+            return Response({"error": "Incorrect login or password"}, status=401)
 
         except KeyError as e:
             return Response({"error": f" is missing {str(e)}"})
