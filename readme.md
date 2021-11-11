@@ -45,26 +45,11 @@ http://127.0.0.1:8000/
 ```json
 // BODY REQUEST
 {
-    
-    "username": "student",
+    // essa requisição cadastra um aluno
+    "username": "Diogo",
     "password": "1234",
-    "is_superuser": false,
-    "is_staff": false
-
-    // o exemplo acima cadastra um aluno
-    // segue os exemplos abaixo para cadastrar um facilitador ou instrutor.
-    
-    // "username": "facilitator",
-    // "password": "1234",
-    // "is_superuser": false,
-    // "is_staff": true
-    
-    // "username": "instructor",
-    // "password": "1234",
-    // "is_superuser": true,
-    // "is_staff": true
-
-    // a saida para todos os exemplos vai ter a mesma resposta exibida abaixo ...
+    "is_superuser": false, // altere para true se quiser cadastrar um instrutor
+    "is_staff": false // altere para true e permaneça como false o campo acima se quiser cadastrar um facilitador.
 }
     
 ```
@@ -73,7 +58,7 @@ http://127.0.0.1:8000/
 // RESPONSE STATUS -> HTTP 201
 {
     "id": 1,
-    "username": "student",
+    "username": "Diogo",
     "is_superuser": false,
     "is_staff": false
 }
