@@ -50,6 +50,21 @@ http://127.0.0.1:8000/
     "password": "1234",
     "is_superuser": false,
     "is_staff": false
+
+    // o exemplo acima cadastra um aluno
+    // segue os exemplos abaixo para cadastrar um facilitador ou instrutor.
+    
+    // "username": "facilitator",
+    // "password": "1234",
+    // "is_superuser": false,
+    // "is_staff": true
+    
+    // "username": "instructor",
+    // "password": "1234",
+    // "is_superuser": true,
+    // "is_staff": true
+
+    // a saida para todos os exemplos vai ter a mesma resposta exibida abaixo ...
 }
     
 ```
@@ -113,6 +128,13 @@ http://127.0.0.1:8000/
 // RESPONSE STATUS -> HTTP 403
 {
     "error": "You do not have permission to perform this action."
+}
+```
+### 2.1.3 - Excessão que um campo está faltando
+```json
+// RESPONSE STATUS -> HTTP 400 - Bad Request
+{
+    "error": "is missing 'username'"
 }
 ```
 
@@ -286,7 +308,7 @@ http://127.0.0.1:8000/
 ```json
 // RESPONSE STATUS -> HTTP 404 - Not Found
 {
-    "errors": "invalid user_id list"
+    "error": "invalid user_id list"
 }
 ```
 
