@@ -39,17 +39,45 @@ http://127.0.0.1:8000/
 
 ## 2.1 - USUÁRIO
 
-### 2.1.1 - Cadatrar
+### 2.1.1 - Cadastrar
+
+#### 2.1.1.1 - Aluno
 
 #### POST - ```http://127.0.0.1:8000/api/accounts/```
 ```json
 // BODY REQUEST
 {
-    // essa requisição cadastra um aluno
-    "username": "Diogo",
+    "username": "Student",
     "password": "1234",
-    "is_superuser": false, // altere para true se quiser cadastrar um instrutor
-    "is_staff": false // altere para true e deixe false o campo acima se quiser cadastrar um facilitador
+    "is_superuser": false, 
+    "is_staff": false 
+}
+    
+```
+#### 2.1.1.2 - Facilitador
+
+#### POST - ```http://127.0.0.1:8000/api/accounts/```
+```json
+// BODY REQUEST
+{
+    "username": "Facilitator",
+    "password": "1234",
+    "is_superuser": false, 
+    "is_staff": true 
+}
+    
+```
+
+#### 2.1.1.2 - Instructor
+
+#### POST - ```http://127.0.0.1:8000/api/accounts/```
+```json
+// BODY REQUEST
+{
+    "username": "Instructor",
+    "password": "1234",
+    "is_superuser": true, 
+    "is_staff": true 
 }
     
 ```
