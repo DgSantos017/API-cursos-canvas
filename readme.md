@@ -68,7 +68,7 @@ http://127.0.0.1:8000/
     
 ```
 
-#### 2.1.1.2 - Instructor
+#### 2.1.1.3 - Instructor
 
 #### POST - ```http://127.0.0.1:8000/api/accounts/```
 ```json
