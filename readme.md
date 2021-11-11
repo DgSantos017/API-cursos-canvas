@@ -86,7 +86,7 @@ http://127.0.0.1:8000/
 // RESPONSE STATUS -> HTTP 201
 {
     "id": 1,
-    "username": "Diogo",
+    "username": "Student",
     "is_superuser": false,
     "is_staff": false
 }
