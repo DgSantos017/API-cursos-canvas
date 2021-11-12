@@ -128,7 +128,7 @@ http://127.0.0.1:8000/
     "error": "Incorrect login or password"
 }
 ```
-### 2.1.2.1.2  - Token inválido
+### 2.1.2.1.2  - Token inexistente
 ```json
 // RESPONSE STATUS -> HTTP 401 - Unauthorized
 {
@@ -324,7 +324,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.3 - ATIVIDADES E SUBMISSÕES
+## 2.3 - ATIVIDADES
 
 ### 2.3.1 - Criar atividade (somente instrutor ou facilitador )
 
@@ -429,7 +429,9 @@ http://127.0.0.1:8000/
 ```
 
 
-### 2.3.4 - Submeter (somente estudante)
+## 2.4 - SUBMISSÃO
+
+### 2.4.1 - Aluno entregar atividade(somente aluno)
 
 #### POST - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/submissions/```
 ```json
@@ -450,7 +452,7 @@ http://127.0.0.1:8000/
     "activity_id": 1
 }
 ```
-## 2.3.4.1- Excessão onde o Facilitador ou instrtuor tente submeter uma atividade
+## 2.4.1.1 - somente aluno pode submeter atividade, caso contráirio:
 ```json
 // RESPONSE STATUS -> HTTP 403 - FORBIDDEN
 {
@@ -458,7 +460,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.3.5 - Editar nota da atividade (somente instrutor ou facilitador)
+### 2.4.2 - Editar nota da atividade (somente instrutor ou facilitador)
 
 #### PUT - ```http://127.0.0.1:8000/api/submissions/<int:submission_id>/```
 ```json
@@ -482,11 +484,11 @@ http://127.0.0.1:8000/
 ```
 
 
-### 2.3.6 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
+### 2.4.3 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
 
 #### GET - ```http://127.0.0.1:8000/api/submissions/```
 
-#### 2.3.6.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
+#### 2.4.3.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -508,7 +510,7 @@ http://127.0.0.1:8000/
 ]
 ```
 
-#### 2.3.6.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
+#### 2.4.3.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
 #### GET - ```http://127.0.0.1:8000/api/submissions/```
 ```json

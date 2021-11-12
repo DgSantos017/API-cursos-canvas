@@ -61,7 +61,7 @@ class SubmitActivity(APIView):
             activity = Activity.objects.get(id=activity_id)
             user = request.user
             if user.is_staff or user.is_superuser:
-                return Response({"error": "Only students can submit activities"}, status=403)
+                return Response({"error": "Only students can submit activities"}, status=400)
             repo = request.data["repo"]
             
             submission = Submission.objects.create(user_id=user.id, activity_id=activity.id, repo=repo, grade=None)
