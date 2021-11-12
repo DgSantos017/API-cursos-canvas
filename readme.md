@@ -111,45 +111,6 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.2.1 - Excesssões ao realizar login e de operações não autorizadas de acordo com o nível de usúario.
-
-### 2.2.1.1  - Realizar login em uma conta ainda não criada
-```json
-// RESPONSE STATUS -> HTTP 401 - Unauthorized
-{
-    "error": "Incorrect login or password"
-}
-```
-### 2.2.1.2  - Token inexistente
-```json
-// RESPONSE STATUS -> HTTP 401 - Unauthorized
-{
-  "detail": "Authentication credentials were not provided."
-}
-```
-
-### 2.2.1.3  - Token inválido
-```json
-// RESPONSE STATUS -> HTTP 401 - Unauthorized
-{
-    "detail": "Invalid token."
-}
-```
-### 2.2.1.4  - Token válido, porém não atende os requisitos mínimo de permissão
-```json
-// RESPONSE STATUS -> HTTP 403
-{
-    "detail": "You do not have permission to perform this action."
-}
-```
-### 2.3 - Excessão que um campo está faltando
-```json
-// RESPONSE STATUS -> HTTP 400 - Bad Request
-{
-    "error": "is missing 'username'"
-}
-```
-
 ## 3 - CURSO
 
 ### 3.1 - Cadastrar (somente instrutor )
@@ -518,6 +479,46 @@ http://127.0.0.1:8000/
 // RESPONSE STATUS -> HTTP 409 - Conflict
 {
     "error": "user already exists"
+}
+```
+
+### 6.3 - Autorização, baseado no tipo de usuário 
+
+#### 6.3.1 - Realizar login em uma conta ainda não criada
+```json
+// RESPONSE STATUS -> HTTP 401 - Unauthorized
+{
+    "error": "Incorrect login or password"
+}
+```
+#### 6.3.2  - Token inexistente
+```json
+// RESPONSE STATUS -> HTTP 401 - Unauthorized
+{
+  "detail": "Authentication credentials were not provided."
+}
+```
+
+#### 6.3.3  - Token inválido
+```json
+// RESPONSE STATUS -> HTTP 401 - Unauthorized
+{
+    "detail": "Invalid token."
+}
+```
+#### 6.3.4 - Token válido, porém não atende os requisitos mínimos de permissão(ex: aluno tentando criar curso)
+```json
+// RESPONSE STATUS -> HTTP 403
+{
+    "detail": "You do not have permission to perform this action."
+}
+```
+
+### 6.4 - Formato de requisição incorreta (ex: ao tentar realizar o login, o usuário não informou o username)
+```json
+// RESPONSE STATUS -> HTTP 400 - Bad Request
+{
+    "error": "is missing 'username'"
 }
 ```
 
