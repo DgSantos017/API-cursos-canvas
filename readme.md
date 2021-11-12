@@ -35,7 +35,7 @@ ou <br />
 http://127.0.0.1:8000/
 
 
-# deseja consumir a api ? segue abaixo todos os endpoints da API:
+# deseja consumir a API ? segue abaixo todos os endpoints:
 
 ## 2 - USUÁRIO
 
@@ -91,7 +91,7 @@ http://127.0.0.1:8000/
     "is_staff": false
 }
 ```
-### 2.1.1 - Excessão ao cadatrar usuário que já existe
+#### 2.1.4 - Excessão ao cadatrar usuário que já existe
 
 ```json
 // RESPONSE STATUS -> HTTP 409 - Conflict
@@ -119,7 +119,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.2.1 - Excesssões ao realizar login e de operações não autorizadas de acordo com o nível de usúario.
+### 2.2.1 - Excesssões ao realizar login e de operações não autorizadas de acordo com o nível de usúario.
 
 ### 2.2.1.1  - Realizar login em uma conta ainda não criada
 ```json
@@ -264,15 +264,7 @@ http://127.0.0.1:8000/
  // RESPONSE STATUS -> HTTP 204 NO CONTENT
 ```
 
-## 3.6 - Excessões de exbir, editar e exclir curso por ID inexistente
-```json
-// RESPONSE STATUS -> HTTP 404 Not Found
-{
-   "error": "course does not exist"
-}
-```
-
-### 3.7 - Vincular os alunos ao curso (somente instrutor)
+### 3.6 - Vincular os alunos ao curso (somente instrutor)
 
 #### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/registrations/```
 ```json
@@ -306,21 +298,13 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 3.7.1 - Excesssões em vincular os alunos ao curso
+## 3.6.1 - Excesssões em vincular os alunos ao curso
 
-### 3.7.1.1 - Somente estudantes podem ser matriculados, caso contrário:
+### 3.6.1.1 - Somente estudantes podem ser matriculados, caso contrário:
 ```json
 // RESPONSE STATUS -> HTTP 400 - Bad request
 {
    "error": "Only students can be enrolled in the course"
-}
-```
-
-### 3.7.1.2 - Caso seja informado na lista um ID de usário inválido:
-```json
-// RESPONSE STATUS -> HTTP 404 - Not Found
-{
-    "error": "invalid user_id list"
 }
 ```
 
@@ -510,7 +494,7 @@ http://127.0.0.1:8000/
 ]
 ```
 
-#### 5.3.3 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
+#### 5.3.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
 #### GET - ```http://127.0.0.1:8000/api/submissions/```
 ```json
@@ -546,4 +530,17 @@ http://127.0.0.1:8000/
     }
 ]
 ```
+
+## 6 - EXCEÇÕES
+
+### - Recursos especificos que pedem ID (Ex: foi solicitado um curso que não existe)
+```json
+// RESPONSE STATUS -> HTTP 404 Not Found
+{
+   "error": "course does not exist"
+}
+```
+
+
+
 
