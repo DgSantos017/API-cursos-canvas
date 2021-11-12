@@ -35,13 +35,13 @@ ou <br />
 http://127.0.0.1:8000/
 
 
-## 2 - Consumindo a API, segue abaixo todas as rotas/endpoints da aplicação
+# deseja consumir a api ? segue abaixo todos os endpoints da API:
 
-## 2.1 - USUÁRIO
+## 2 - USUÁRIO
 
-### 2.1.1 - Cadastrar
+### 2.1 - Cadastrar
 
-#### 2.1.1.1 - Aluno
+#### 2.1.1 - Aluno
 
 #### POST - ```http://127.0.0.1:8000/api/accounts/```
 ```json
@@ -54,7 +54,7 @@ http://127.0.0.1:8000/
 }
     
 ```
-#### 2.1.1.2 - Facilitador
+#### 2.1.2 - Facilitador
 
 #### POST - ```http://127.0.0.1:8000/api/accounts/```
 ```json
@@ -68,7 +68,7 @@ http://127.0.0.1:8000/
     
 ```
 
-#### 2.1.1.3 - Instructor
+#### 2.1.3 - Instructor
 
 #### POST - ```http://127.0.0.1:8000/api/accounts/```
 ```json
@@ -91,7 +91,7 @@ http://127.0.0.1:8000/
     "is_staff": false
 }
 ```
-### 2.1.1.1 - Excessão ao cadatrar usuário que já existe
+### 2.1.1 - Excessão ao cadatrar usuário que já existe
 
 ```json
 // RESPONSE STATUS -> HTTP 409 - Conflict
@@ -100,7 +100,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.1.2 - Login
+### 2.2 - Login
 
 #### POST - ```http://127.0.0.1:8000/api/login/```
 ```json
@@ -119,16 +119,16 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.1.2.1 - Excesssões ao realizar login e de operações não autorizadas de acordo com o nível de usúario.
+## 2.2.1 - Excesssões ao realizar login e de operações não autorizadas de acordo com o nível de usúario.
 
-### 2.1.2.1.1  - Realizar login em uma conta ainda não criada
+### 2.2.1.1  - Realizar login em uma conta ainda não criada
 ```json
 // RESPONSE STATUS -> HTTP 401 - Unauthorized
 {
     "error": "Incorrect login or password"
 }
 ```
-### 2.1.2.1.2  - Token inexistente
+### 2.2.1.2  - Token inexistente
 ```json
 // RESPONSE STATUS -> HTTP 401 - Unauthorized
 {
@@ -136,21 +136,21 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.1.2.1.3  - Token inválido
+### 2.2.1.3  - Token inválido
 ```json
 // RESPONSE STATUS -> HTTP 401 - Unauthorized
 {
     "detail": "Invalid token."
 }
 ```
-### 2.1.2.1.4  - Token válido, porém não atende os requisitos mínimo de permissão
+### 2.2.1.4  - Token válido, porém não atende os requisitos mínimo de permissão
 ```json
 // RESPONSE STATUS -> HTTP 403
 {
     "detail": "You do not have permission to perform this action."
 }
 ```
-### 2.1.3 - Excessão que um campo está faltando
+### 2.3 - Excessão que um campo está faltando
 ```json
 // RESPONSE STATUS -> HTTP 400 - Bad Request
 {
@@ -158,9 +158,9 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.2 - CURSO
+## 3 - CURSO
 
-### 2.2.1 - Cadastrar (somente instrutor )
+### 3.1 - Cadastrar (somente instrutor )
 
 #### POST - ```http://127.0.0.1:8000/api/courses/```
 ```json
@@ -180,7 +180,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.2.1.1 - Excesssão ao cadastrar um curso que já existe
+## 3.1.1 - Excesssão ao cadastrar um curso que já existe
 ```json
 // RESPONSE STATUS -> HTTP 400 BAD REQUEST
 {
@@ -189,7 +189,7 @@ http://127.0.0.1:8000/
 ```
 
 
-### 2.2.2 - Listar cursos e alunos matriculdos
+### 3.2 - Listar cursos e alunos matriculdos
 #### GET - ```http://127.0.0.1:8000/api/courses/```
 
 ```json
@@ -219,7 +219,7 @@ http://127.0.0.1:8000/
 ```
 
 
-### 2.2.3 - Exibir curso por ID
+### 3.3 - Exibir curso por ID
 
 #### GET - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 
@@ -237,7 +237,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.2.4 - Editar (somente instrutor)
+### 3.4 - Editar (somente instrutor)
 
 #### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 ```json
@@ -257,14 +257,14 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.2.5 - Excluir (somente instrutor)
+### 3.5 - Excluir (somente instrutor)
 
 #### DELETE - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
 ```json
  // RESPONSE STATUS -> HTTP 204 NO CONTENT
 ```
 
-## 2.2.6 - Excessões de exbir, editar e exclir curso por ID inexistente
+## 3.6 - Excessões de exbir, editar e exclir curso por ID inexistente
 ```json
 // RESPONSE STATUS -> HTTP 404 Not Found
 {
@@ -272,7 +272,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.2.7 - Vincular os alunos ao curso (somente instrutor)
+### 3.7 - Vincular os alunos ao curso (somente instrutor)
 
 #### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/registrations/```
 ```json
@@ -306,9 +306,9 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.2.7.1 - Excesssões em vincular os alunos ao curso
+## 3.7.1 - Excesssões em vincular os alunos ao curso
 
-### 2.2.7.1.1 - Somente estudantes podem ser matriculados, caso contrário:
+### 3.7.1.1 - Somente estudantes podem ser matriculados, caso contrário:
 ```json
 // RESPONSE STATUS -> HTTP 400 - Bad request
 {
@@ -316,7 +316,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.2.7.1.2 - Caso seja informado na lista um ID de usário inválido:
+### 3.7.1.2 - Caso seja informado na lista um ID de usário inválido:
 ```json
 // RESPONSE STATUS -> HTTP 404 - Not Found
 {
@@ -324,9 +324,9 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.3 - ATIVIDADES
+## 4 - ATIVIDADES
 
-### 2.3.1 - Criar atividade (somente instrutor ou facilitador )
+### 4.1 - Criar atividade (somente instrutor ou facilitador )
 
 #### POST - ```http://127.0.0.1:8000/api/activities/```
 ```json
@@ -349,7 +349,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.3.1.1 - Excessão de criar atividade com o mesmo titulo
+### 4.1.1 - Excessão de criar atividade com o mesmo titulo
 
 ```json
 // RESPONSE STATUS -> HTTP 400 BAD REQUEST
@@ -359,7 +359,7 @@ http://127.0.0.1:8000/
 ```
 
 
-### 2.3.2 - Listar atividades com suas submissões (somente instrutor ou facilitador)
+### 4.2 - Listar atividades com suas submissões (somente instrutor ou facilitador)
 
 #### GET - ```http://127.0.0.1:8000/api/activities/```
 
@@ -398,7 +398,7 @@ http://127.0.0.1:8000/
 ```
 
 
-### 2.3.3 - Editar atividade (somente instrutor ou facilitador)
+### 4.3 - Editar atividade (somente instrutor ou facilitador)
 
 #### PUT - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/```
 ```json
@@ -420,7 +420,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 2.3.3.1 - Excessão onde a atividade que algum aluno tenha feito uma submissão não pode sofrer alteração no nome ou na pontuação
+## 4.3.1 - Excessão onde a atividade que algum aluno tenha feito uma submissão não pode sofrer alteração no nome ou na pontuação
 ```json
 // RESPONSE STATUS -> HTTP 400 Bad Request
 {
@@ -429,9 +429,9 @@ http://127.0.0.1:8000/
 ```
 
 
-## 2.4 - SUBMISSÃO
+## 5 - SUBMISSÃO
 
-### 2.4.1 - Aluno entregar atividade(somente aluno)
+### 5.1 - Aluno entregar atividade(somente aluno)
 
 #### POST - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/submissions/```
 ```json
@@ -452,7 +452,7 @@ http://127.0.0.1:8000/
     "activity_id": 1
 }
 ```
-## 2.4.1.1 - somente aluno pode submeter atividade, caso contráirio:
+## 5.1.1 - somente aluno pode submeter atividade, caso contráirio:
 ```json
 // RESPONSE STATUS -> HTTP 403 - FORBIDDEN
 {
@@ -460,7 +460,7 @@ http://127.0.0.1:8000/
 }
 ```
 
-### 2.4.2 - Editar nota da atividade (somente instrutor ou facilitador)
+### 5.2 - Editar nota da atividade (somente instrutor ou facilitador)
 
 #### PUT - ```http://127.0.0.1:8000/api/submissions/<int:submission_id>/```
 ```json
@@ -484,11 +484,11 @@ http://127.0.0.1:8000/
 ```
 
 
-### 2.4.3 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
+### 5.3 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
 
 #### GET - ```http://127.0.0.1:8000/api/submissions/```
 
-#### 2.4.3.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
+#### 5.3.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -510,7 +510,7 @@ http://127.0.0.1:8000/
 ]
 ```
 
-#### 2.4.3.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
+#### 5.3.3 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
 #### GET - ```http://127.0.0.1:8000/api/submissions/```
 ```json
