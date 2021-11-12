@@ -242,16 +242,6 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 3.6.1 - Excesssões em vincular os alunos ao curso
-
-### 3.6.1.1 - Somente estudantes podem ser matriculados, caso contrário:
-```json
-// RESPONSE STATUS -> HTTP 400 - Bad request
-{
-   "error": "Only students can be enrolled in the course"
-}
-```
-
 ## 4 - ATIVIDADES
 
 ### 4.1 - Criar atividade (somente instrutor ou facilitador )
@@ -338,15 +328,6 @@ http://127.0.0.1:8000/
 }
 ```
 
-## 4.3.1 - Excessão onde a atividade que algum aluno tenha feito uma submissão não pode sofrer alteração no nome ou na pontuação
-```json
-// RESPONSE STATUS -> HTTP 400 Bad Request
-{
-   "error": "You can not change an Activity with submissions"
-}
-```
-
-
 ## 5 - SUBMISSÃO
 
 ### 5.1 - Aluno entregar atividade(somente aluno)
@@ -368,13 +349,6 @@ http://127.0.0.1:8000/
     "repo": "http://gitlab.com/kenzie_pet",
     "user_id": 3,
     "activity_id": 1
-}
-```
-## 5.1.1 - somente aluno pode submeter atividade, caso contráirio:
-```json
-// RESPONSE STATUS -> HTTP 403 - FORBIDDEN
-{
-   "error": "Only students can submit activities"
 }
 ```
 
@@ -519,6 +493,14 @@ http://127.0.0.1:8000/
 // RESPONSE STATUS -> HTTP 400 - Bad Request
 {
     "error": "is missing 'username'"
+}
+```
+
+### 6.5 - a atividade que algum aluno tenha feito uma submissão não pode sofrer alteração no nome ou na pontuação
+```json
+// RESPONSE STATUS -> HTTP 400 Bad Request
+{
+   "error": "You can not change an Activity with submissions"
 }
 ```
 
