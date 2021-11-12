@@ -128,15 +128,22 @@ http://127.0.0.1:8000/
     "error": "Incorrect login or password"
 }
 ```
-
 ### 2.1.2.1.2  - Token inválido
+```json
+// RESPONSE STATUS -> HTTP 401 - Unauthorized
+{
+  "detail": "Authentication credentials were not provided."
+}
+```
+
+### 2.1.2.1.3  - Token inválido
 ```json
 // RESPONSE STATUS -> HTTP 401 - Unauthorized
 {
     "detail": "Invalid token."
 }
 ```
-### 2.1.2.1.3  - Token válido, porém não atende os requisitos mínimo de permissão
+### 2.1.2.1.4  - Token válido, porém não atende os requisitos mínimo de permissão
 ```json
 // RESPONSE STATUS -> HTTP 403
 {
@@ -347,7 +354,7 @@ http://127.0.0.1:8000/
 ```json
 // RESPONSE STATUS -> HTTP 400 BAD REQUEST
 {
-    "error": "Activity with this name already exists"}
+   "error": "activity already exists"
 }
 ```
 
@@ -427,8 +434,7 @@ http://127.0.0.1:8000/
 #### POST - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/submissions/```
 ```json
 // BODY REQUEST
-{
-    "grade": 10, // Esse campo é opcional
+{ 
     "repo": "http://gitlab.com/kenzie_pet"
 }
     
@@ -444,7 +450,13 @@ http://127.0.0.1:8000/
     "activity_id": 1
 }
 ```
-
+## 2.3.4.1- Excessão onde o Facilitador ou instrtuor tente submeter uma atividade
+```json
+// RESPONSE STATUS -> HTTP 403 - FORBIDDEN
+{
+   "error": "Only students can submit activities"
+}
+```
 
 ### 2.3.5 - Editar nota da atividade (somente instrutor ou facilitador)
 
