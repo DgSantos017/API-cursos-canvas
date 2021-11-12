@@ -91,14 +91,6 @@ http://127.0.0.1:8000/
     "is_staff": false
 }
 ```
-#### 2.1.4 - Excessão ao cadatrar usuário que já existe
-
-```json
-// RESPONSE STATUS -> HTTP 409 - Conflict
-{
-    "error": "user already exists"
-}
-```
 
 ### 2.2 - Login
 
@@ -179,15 +171,6 @@ http://127.0.0.1:8000/
     "users": []
 }
 ```
-
-## 3.1.1 - Excesssão ao cadastrar um curso que já existe
-```json
-// RESPONSE STATUS -> HTTP 400 BAD REQUEST
-{
-    "error": "Course with this name already exists"
-}
-```
-
 
 ### 3.2 - Listar cursos e alunos matriculdos
 #### GET - ```http://127.0.0.1:8000/api/courses/```
@@ -332,16 +315,6 @@ http://127.0.0.1:8000/
     "submissions": []
 }
 ```
-
-### 4.1.1 - Excessão de criar atividade com o mesmo titulo
-
-```json
-// RESPONSE STATUS -> HTTP 400 BAD REQUEST
-{
-   "error": "activity already exists"
-}
-```
-
 
 ### 4.2 - Listar atividades com suas submissões (somente instrutor ou facilitador)
 
@@ -533,14 +506,20 @@ http://127.0.0.1:8000/
 
 ## 6 - EXCEÇÕES
 
-### - Recursos especificos que pedem ID (Ex: foi solicitado um curso que não existe)
+### 6.1 - Recursos especificos que pedem ID (Ex: foi solicitado um curso que não existe)
 ```json
 // RESPONSE STATUS -> HTTP 404 Not Found
 {
    "error": "course does not exist"
 }
 ```
-
+### 6.2 - Cadastrar um recurso que já existe (Ex: tentativa de cadastrar usuário já cadastrado)
+```json
+// RESPONSE STATUS -> HTTP 409 - Conflict
+{
+    "error": "user already exists"
+}
+```
 
 
 
