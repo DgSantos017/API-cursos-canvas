@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/home/diogo/Documents/Q4/kanvas/manage.py", line 22, in <module>
+    main()
+  File "/home/diogo/Documents/Q4/kanvas/manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "/home/diogo/Documents/Q4/kanvas/venv/lib/python3.9/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/diogo/Documents/Q4/kanvas/venv/lib/python3.9/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/diogo/Documents/Q4/kanvas/venv/lib/python3.9/site-packages/django/core/management/commands/test.py", line 23, in run_from_argv
+    super().run_from_argv(argv)
+  File "/home/diogo/Documents/Q4/kanvas/venv/lib/python3.9/site-packages/django/core/management/base.py", line 346, in run_from_argv
+    parser = self.create_parser(argv[0], argv[1])
+  File "/home/diogo/Documents/Q4/kanvas/venv/lib/python3.9/site-packages/django/core/management/base.py", line 320, in create_parser
+    self.add_arguments(parser)
+  File "/home/diogo/Documents/Q4/kanvas/venv/lib/python3.9/site-packages/django/core/management/commands/test.py", line 44, in add_arguments
+    test_runner_class = get_runner(settings, self.test_runner)
+  File "/home/diogo/Documents/Q4/kanvas/venv/lib/python3.9/site-packages/django/test/utils.py", line 324, in get_runner
+    test_module = __import__(test_module_name, {}, {}, test_path[-1])
+  File "/home/diogo/Documents/Q4/kanvas/venv/lib/python3.9/site-packages/django/test/runner.py", line 1, in <module>
+    import ctypes
+  File "/home/diogo/.asdf/installs/python/3.9.6/lib/python3.9/ctypes/__init__.py", line 8, in <module>
+    from _ctypes import Union, Structure, Array
+ImportError: libffi.so.6: cannot open shared object file: No such file or directory
