@@ -18,22 +18,26 @@ class RegistrationCourse(APIView):
         try:
             course = Course.objects.get(id=course_id)
             user_ids = request.data['user_ids']
-
-            course.users.set([])
-
-            for id in user_ids:
-                user = User.objects.get(id=id)
-                if user.is_staff or user.is_superuser:
-                    return Response({"error": "Only students can be enrolled in the course"}, status=400)
-                course.users.add(user)
             
-            course.save()
-            serializer = CourseSerializer(course)
+            if type(user_ids) == list:
 
-            return Response(serializer.data)
+                course.users.set([])
+
+                for id in user_ids:
+                    user = User.objects.get(id=id)
+                    if user.is_staff or user.is_superuser:
+                        return Response({'errors': 'Only students can be enrolled in the course.'}, status=400)
+                    course.users.add(user)
+                
+                course.save()
+                serializer = CourseSerializer(course)
+
+                return Response(serializer.data)
+            else:
+                return Response({'error': 'you need to enter a list of students'}, 400)
 
         except Course.DoesNotExist:
-            return Response({"error": "course does not exist"}, status=404)
+            return Response({'errors': 'invalid course_id'}, status=404)
 
         except User.DoesNotExist:
             return Response({"error": "invalid user_id list"}, status=404)
@@ -81,7 +85,7 @@ class CourseById(APIView):
             return Response({"error": f"{str(e)} is missing"}, status=400)
 
         except Course.DoesNotExist:
-            return Response({"error": "course does not exist"}, status=404)
+            return Response({'errors': 'invalid course_id'}, status=404)
 
         except IntegrityError:
             return Response({"error": "Course with this name already exists"}, status=400)
@@ -94,7 +98,7 @@ class CourseById(APIView):
             return Response(serializer.data, status=200)
 
         except Course.DoesNotExist:
-            return Response({"error": "course does not exist"}, status=404)
+            return Response({'errors': 'invalid course_id'}, status=404)
 
     def delete(self, request, course_id):
         try:
@@ -104,7 +108,7 @@ class CourseById(APIView):
             return Response('', status=204)
 
         except Course.DoesNotExist:
-            return Response({"error": "course does not exist"}, status=404)
+            return Response({'errors': 'invalid course_id'}, status=404)
 
 
 

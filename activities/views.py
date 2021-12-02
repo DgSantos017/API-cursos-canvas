@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from accounts.permissions import Facilitator, Instructor
+from accounts.permissions import Facilitator
 from .serializers import ActivitySerializer, SubmissionSerializer
 from .models import Activity, Submission
 
@@ -30,13 +30,13 @@ class Createactivity(APIView):
             return Response(output, status=201)
 
         except IntegrityError:
-            return Response({"error": "activity already exists"}, status=400)
+            return Response({'error': 'Activity with this name already exists'}, status=400)
         
     
     def get(self, request):
         user = request.user
         if not user.is_staff:
-            return Response({"detail": "You do not have permission to perform this action."})
+            return Response({"detail": "You do not have permission to perform this action."}, 403)
 
         activities = Activity.objects.all()
         serializer = ActivitySerializer(activities, many=True) 
@@ -61,7 +61,7 @@ class SubmitActivity(APIView):
             activity = Activity.objects.get(id=activity_id)
             user = request.user
             if user.is_staff or user.is_superuser:
-                return Response({"error": "Only students can submit activities"}, status=400)
+                return Response({"error": "Only students can submit activities"}, status=403)
             repo = request.data["repo"]
             
             submission = Submission.objects.create(user_id=user.id, activity_id=activity.id, repo=repo, grade=None)
@@ -132,7 +132,7 @@ class ActivityById(APIView):
             return Response({"error": "Activity Not Found"}, status=404)
 
         except IntegrityError:
-            return Response({"error": "activity already exists"}, status=400)
+            return Response({'error': 'Activity with this name already exists'}, status=400)
       
 
 
