@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-i(siw_d_v*!0c8oe8v%mbu63-#j-av7ysm6jmvh@zo@58r7sjt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kanvas.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -67,11 +67,14 @@ WSGI_APPLICATION = 'kanvas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'canvas',
+        'USER': 'diogo',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432' 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
