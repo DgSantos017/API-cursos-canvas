@@ -1,5 +1,5 @@
-"dbname=d8i9j2bmscv0be 
-host=ec2-54-204-128-96.compute-1.amazonaws.com 
+"dbname=d2kjqc0meidhqm 
+host=ec2-3-89-214-80.compute-1.amazonaws.com 
 port=5432 
-user=pdkegzztandpng 
-password=32431b1c68b37e7a50de9e5df0a79ee536705822b9ad4814255a89b02c46f555 sslmode=require"
+user=dqaakeyxlttotk 
+password=ce92e3cc64a129032cc91ebed5d86a398dfa21dee92619abc7ec7b6e81062872 

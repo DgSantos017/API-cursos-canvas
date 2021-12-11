@@ -1,1 +1,1 @@
-web: gunicorn dkanvas.wsgi
+web: gunicorn kanvas.wsgi
