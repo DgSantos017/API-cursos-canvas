@@ -32,7 +32,7 @@ ou <br />
 #### 1.7 - por fim, inicie o servidor para rodar o projeto:
 ``` python manage.py runserver ```
 ##### 1.7.1 - se todos os passos foram bem executados, seu projeto vai rodar localmente no seguinte endereço:
-http://127.0.0.1:8000/
+https://dkanvas.herokuapp.com/
 
 
 # deseja consumir a API ? segue abaixo todos os endpoints:
@@ -43,7 +43,7 @@ http://127.0.0.1:8000/
 
 #### 2.1.1 - Aluno
 
-#### POST - ```http://127.0.0.1:8000/api/accounts/```
+#### POST - ```https://dkanvas.herokuapp.com/api/accounts/```
 ```json
 // BODY REQUEST
 {
@@ -56,7 +56,7 @@ http://127.0.0.1:8000/
 ```
 #### 2.1.2 - Facilitador
 
-#### POST - ```http://127.0.0.1:8000/api/accounts/```
+#### POST - ```https://dkanvas.herokuapp.com/api/accounts/```
 ```json
 // BODY REQUEST
 {
@@ -70,7 +70,7 @@ http://127.0.0.1:8000/
 
 #### 2.1.3 - Instructor
 
-#### POST - ```http://127.0.0.1:8000/api/accounts/```
+#### POST - ```https://dkanvas.herokuapp.com/api/accounts/```
 ```json
 // BODY REQUEST
 {
@@ -94,7 +94,7 @@ http://127.0.0.1:8000/
 
 ### 2.2 - Login
 
-#### POST - ```http://127.0.0.1:8000/api/login/```
+#### POST - ```https://dkanvas.herokuapp.com/api/login/```
 ```json
 // BODY REQUEST
 {
@@ -115,7 +115,7 @@ http://127.0.0.1:8000/
 
 ### 3.1 - Cadastrar (somente instrutor )
 
-#### POST - ```http://127.0.0.1:8000/api/courses/```
+#### POST - ```https://dkanvas.herokuapp.com/api/courses/```
 ```json
 // BODY REQUEST
 {
@@ -134,7 +134,7 @@ http://127.0.0.1:8000/
 ```
 
 ### 3.2 - Listar cursos e alunos matriculdos
-#### GET - ```http://127.0.0.1:8000/api/courses/```
+#### GET - ```https://dkanvas.herokuapp.com/api/courses/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -165,7 +165,7 @@ http://127.0.0.1:8000/
 
 ### 3.3 - Exibir curso por ID
 
-#### GET - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
+#### GET - ```https://dkanvas.herokuapp.com/api/courses/<int:course_id>/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -183,7 +183,7 @@ http://127.0.0.1:8000/
 
 ### 3.4 - Editar (somente instrutor)
 
-#### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
+#### PUT - ```https://dkanvas.herokuapp.com/api/courses/<int:course_id>/```
 ```json
 // BODY REQUEST
 {
@@ -203,14 +203,14 @@ http://127.0.0.1:8000/
 
 ### 3.5 - Excluir (somente instrutor)
 
-#### DELETE - ```http://127.0.0.1:8000/api/courses/<int:course_id>/```
+#### DELETE - ```https://dkanvas.herokuapp.com/api/courses/<int:course_id>/```
 ```json
  // RESPONSE STATUS -> HTTP 204 NO CONTENT
 ```
 
 ### 3.6 - Vincular os alunos ao curso (somente instrutor)
 
-#### PUT - ```http://127.0.0.1:8000/api/courses/<int:course_id>/registrations/```
+#### PUT - ```https://dkanvas.herokuapp.com/api/courses/<int:course_id>/registrations/```
 ```json
 // BODY REQUEST
 {
@@ -246,7 +246,7 @@ http://127.0.0.1:8000/
 
 ### 4.1 - Criar atividade (somente instrutor ou facilitador )
 
-#### POST - ```http://127.0.0.1:8000/api/activities/```
+#### POST - ```https://dkanvas.herokuapp.com/api/activities/```
 ```json
 // BODY REQUEST
 {
@@ -269,7 +269,7 @@ http://127.0.0.1:8000/
 
 ### 4.2 - Listar atividades com suas submissões (somente instrutor ou facilitador)
 
-#### GET - ```http://127.0.0.1:8000/api/activities/```
+#### GET - ```https://dkanvas.herokuapp.com/api/activities/```
 
 ```json
 // RESPONSE STATUS -> HTTP 200
@@ -308,7 +308,7 @@ http://127.0.0.1:8000/
 
 ### 4.3 - Editar atividade (somente instrutor ou facilitador)
 
-#### PUT - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/```
+#### PUT - ```https://dkanvas.herokuapp.com/api/activities/<int:activity_id>/```
 ```json
 // BODY REQUEST
 {
@@ -332,7 +332,7 @@ http://127.0.0.1:8000/
 
 ### 5.1 - Aluno entregar atividade(somente aluno)
 
-#### POST - ```http://127.0.0.1:8000/api/activities/<int:activity_id>/submissions/```
+#### POST - ```https://dkanvas.herokuapp.com/api/activities/<int:activity_id>/submissions/```
 ```json
 // BODY REQUEST
 { 
@@ -354,7 +354,7 @@ http://127.0.0.1:8000/
 
 ### 5.2 - Editar nota da atividade (somente instrutor ou facilitador)
 
-#### PUT - ```http://127.0.0.1:8000/api/submissions/<int:submission_id>/```
+#### PUT - ```https://dkanvas.herokuapp.com/api/submissions/<int:submission_id>/```
 ```json
 // BODY REQUEST
 {
@@ -378,7 +378,7 @@ http://127.0.0.1:8000/
 
 ### 5.3 - Listar as submissões (estudante só pode ver as próprias submissões, enquanto facilitador ou instrutor pode ver todas) 
 
-#### GET - ```http://127.0.0.1:8000/api/submissions/```
+#### GET - ```https://dkanvas.herokuapp.com/api/submissions/```
 
 #### 5.3.1 - COMO ESTUDANTES PARA VER APENAS SUAS SUBMISSÕES:
 
@@ -404,7 +404,7 @@ http://127.0.0.1:8000/
 
 #### 5.3.2 - COMO INSTRUTORES OU FACILITADORES PARA VER TODAS AS SUBMISSÕES:
 
-#### GET - ```http://127.0.0.1:8000/api/submissions/```
+#### GET - ```https://dkanvas.herokuapp.com/api/submissions/```
 ```json
 // RESPONSE STATUS -> HTTP 200
 [
