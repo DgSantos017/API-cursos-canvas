@@ -60,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dio-kanvas.wsgi.application'
+WSGI_APPLICATION = 'dkanvas.wsgi.application'
 
 
 # Database
