@@ -1,0 +1,4 @@
+"dbname=d8i9j2bmscv0be 
+host=ec2-54-204-128-96.compute-1.amazonaws.com 
+port=5432 
+user=pdkegzztandpng password=32431b1c68b37e7a50de9e5df0a79ee536705822b9ad4814255a89b02c46f555 sslmode=require"

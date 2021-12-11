@@ -1,1 +1,1 @@
-web: gunicorn dio-kanvas.wsgi
+web: gunicorn dkanvas.wsgi

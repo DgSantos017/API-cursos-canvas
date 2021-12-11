@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-i(siw_d_v*!0c8oe8v%mbu63-#j-av7ysm6jmvh@zo@58r7sjt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dio-kanvas.herokuapp.com', 'ec2-3-95-130-249.compute-1.amazonaws.com']
+ALLOWED_HOSTS = ['dkanvas.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -68,14 +68,14 @@ WSGI_APPLICATION = 'dio-kanvas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9sqqgvmlatjjb',
-        'USER': 'hpptelygdqgaqt',
-        'PASSWORD': '7ad7b024417db02352917d9cfe7351c458fd2e55d47654bc56a53fe122dad0c8',
-        'HOST': 'ec2-3-95-130-249.compute-1.amazonaws.com',
+        'NAME': 'd8i9j2bmscv0be',
+        'USER': 'pdkegzztandpng',
+        'PASSWORD': '32431b1c68b37e7a50de9e5df0a79ee536705822b9ad4814255a89b02c46f555',
+        'HOST': 'ec2-54-204-128-96.compute-1.amazonaws.com',
         'PORT': '5432' 
     }
 }
-
+DATABASE_URL = os.environ.get('DATABASE_URL')
 
 if DATABASE_URL:
     db_from_env = dj_database_url.config(
