@@ -12,7 +12,7 @@ SECRET_KEY = 'django-insecure-i(siw_d_v*!0c8oe8v%mbu63-#j-av7ysm6jmvh@zo@58r7sjt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kanvas.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['dio-kanvas.herokuapp.com', 'ec2-3-95-130-249.compute-1.amazonaws.com']
 
 
 # Application definition
@@ -59,7 +59,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'kanvas.wsgi.application'
+WSGI_APPLICATION = 'dio-kanvas.wsgi.application'
 
 
 # Database
@@ -68,13 +68,20 @@ WSGI_APPLICATION = 'kanvas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'canvas',
-        'USER': 'diogo',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
+        'NAME': 'd9sqqgvmlatjjb',
+        'USER': 'hpptelygdqgaqt',
+        'PASSWORD': '7ad7b024417db02352917d9cfe7351c458fd2e55d47654bc56a53fe122dad0c8',
+        'HOST': 'ec2-3-95-130-249.compute-1.amazonaws.com',
         'PORT': '5432' 
     }
 }
+
+
+if DATABASE_URL:
+    db_from_env = dj_database_url.config(
+        default=DATABASE_URL, conn_max_age=500, ssl_require=True)
+    DATABASES['default'].update(db_from_env)
+    DEBUG = False
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
