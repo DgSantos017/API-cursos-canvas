@@ -63,8 +63,11 @@ class Courses(APIView):
 
     def get(self, request):
         courses = Course.objects.all()
-        serializer = CourseSerializer(courses, many=True) 
-        return Response(serializer.data, status=200)
+        if courses:
+            serializer = CourseSerializer(courses, many=True) 
+            return Response(serializer.data, status=200)
+        else:
+            return {'Ainda não foi registrado nenhum curso'}, 204
 
 
 class CourseById(APIView):
