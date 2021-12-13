@@ -1,10 +1,6 @@
 # KANVAS
 um sistema voltado para o ensino. É possível cadastrar estudantes, facilitadores e instrutores, proporcionando aos estudantes cursos e atividades. Nesse sistema o aluno encontra aulas em formato escrito e por videos proporcionadas pelos instrutores e com auxilio dos facilitadores, atividades para praticar o que aprendeu para assimilar e é possível enviar essas atividades para a correção do time de ensino, recebendo depois todo o feedback sobre seu desempenho.
 
-# Diagrama Entidade Relacionamento
-</br>
-![diagrama_er](./relacionamentosKanvas.png)
-</br>
 
 ## 1 - Como rodar o projeto ? entre no terminal e siga o passo a passo abaixo:
 
