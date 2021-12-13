@@ -79,14 +79,9 @@ WSGI_APPLICATION = 'kanvas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2kjqc0meidhqm',
-        'USER': 'dqaakeyxlttotk',
-        'PASSWORD': 'ce92e3cc64a129032cc91ebed5d86a398dfa21dee92619abc7ec7b6e81062872',
-        'HOST': 'ec2-3-89-214-80.compute-1.amazonaws.com',
-        'PORT': '5432' 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-
 }
 DATABASE_URL = os.environ.get('DATABASE_URL')
 # Essa variável de ambiente é setada automaticamente pelo Heroku
